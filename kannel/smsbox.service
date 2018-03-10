@@ -1,0 +1,9 @@
+[Unit]
+Description=Kannel's smsbox service
+Requires=bearerbox.service
+
+[Service]
+User=kannel
+Type=simple
+ExecStart=/usr/sbin/smsbox /vagrant/smskannel.conf
+

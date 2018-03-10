@@ -1,0 +1,10 @@
+[Unit]
+Description=SMPPSim SMSC
+Requires=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/opt/smppsim/
+Type=simple
+ExecStart=/bin/sh /opt/smppsim/startsmppsim.sh
+

@@ -1,0 +1,8 @@
+[Unit]
+Description=Kannel's bearerbox service
+Requires=network.target
+
+[Service]
+User=kannel
+Type=simple
+ExecStart=/usr/sbin/bearerbox /vagrant/smskannel.conf

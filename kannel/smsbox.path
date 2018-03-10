@@ -1,0 +1,5 @@
+[Unit]
+Description=Monitor Kannel config file
+
+[Path]
+PathChanged=/vagrant/smskannel.props
