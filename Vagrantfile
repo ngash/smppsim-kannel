@@ -75,12 +75,17 @@ Vagrant.configure("2") do |config|
     smsc.vm.synced_folder "smppsim/", "/vagrant"
     smsc.vm.provision "shell", privileged: false, inline: <<-SHELL
       # setup SMPPSIM
-      sudo apt-get install -y openjdk-9-jdk
+      sudo apt-get install -y openjdk-9-jdk ant
 
       sudo rm -vrf /opt/smppsim
 
       wget -qc 'https://github.com/ngash/smppsim/archive/master.tar.gz'
       tar xf master.tar.gz
+
+      cd smppsim-master
+      ant
+      cd -
+
       sudo mv -v smppsim-master /opt/smppsim
 
       sudo cp -v /vagrant/smppsim.props /opt/smppsim/conf/
