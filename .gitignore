@@ -1,3 +1,4 @@
 .vagrant
 *.log
 smppsim/logs/*
+kannel/logs/*
